@@ -7,7 +7,7 @@ using ApiCatalogoJogos.ViewModel;
 
 namespace ApiCatalogoJogos.Services
 {
-    public interface IJogoService
+    public interface IJogoService : IDisposable
     {
 
         Task<List<JogoViewModel>> Obter(int pagina, int quantidade);
@@ -16,13 +16,10 @@ namespace ApiCatalogoJogos.Services
 
         Task<JogoViewModel> Inserir(JogoInputModel jogo);
 
-        Task Atualizat(Guid id, JogoInputModel jogo);
+        Task Atualizar(Guid id, JogoInputModel jogo);
 
         Task Atualizar(Guid id, double preco);
 
-        Task remover(Guid id);
-
-
-
+        Task Remover(Guid idJogo);
     }
 }
