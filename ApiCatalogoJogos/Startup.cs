@@ -32,6 +32,9 @@ namespace ApiCatalogoJogos
             services.AddScoped<IJogoService, JogoService>();
             services.AddScoped<IJogoRepository, JogoRepository>();
 
+            // quando configurar o appsettings
+            //services.AddScoped<IJogoRepository, JogoSqlServerRepository>();
+
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
